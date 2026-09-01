@@ -122,6 +122,6 @@ body.reserve-open { overflow: hidden; }
 }
 
 /* Scalable PULSE wordmark. */
-.brand-logo { display: block; width: 132px; height: auto; }
-.footer-top .brand-logo { width: 168px; }
-@media (max-width: 800px) { .brand-logo { width: 116px; } .footer-top .brand-logo { width: 150px; } }
+.brand-logo { display: block; width: 154px; height: auto; object-fit: contain; object-position: left center; }
+.footer-top .brand-logo { width: 196px; }
+@media (max-width: 800px) { .brand-logo { width: 132px; } .footer-top .brand-logo { width: 168px; } }
