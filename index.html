@@ -27,6 +27,27 @@
     <section class="shop"><div class="wrap"><div class="shop-copy"><span class="eyebrow"><i style="background:var(--ink);box-shadow:none"></i> The first release</span><h2 class="section-title">Start listening<br>to your <em style="font-style:normal;color:var(--paper)">edge.</em></h2><p>Get PULSE in Graphite with the all-weather Limelight weave. Ships with the PULSE app and a year of advanced insight included.</p><button class="pill-action buy" type="button">Reserve PULSE &#x2014; $249 <span>&#x2197;</span></button></div><div class="shop-band"></div></div></section>
   </main>
   <footer><div class="wrap"><div class="footer-top"><a class="brand" href="#top"><span class="brand-mark">p</span>PULSE</a><p class="footer-cta">Designed for the athlete behind the achievement.</p></div><div class="footer-bottom"><span>&#xA9; 2026 PULSE LABS</span><div><a href="#scores">Privacy</a><a href="#scores">Terms</a><a href="mailto:hello@pulse.example">Contact</a></div></div></div></footer>
+  <div class="reserve-modal" id="reserve-modal" role="dialog" aria-modal="true" aria-labelledby="reserve-title" hidden>
+    <div class="reserve-backdrop" data-reserve-close></div>
+    <section class="reserve-dialog" tabindex="-1">
+      <button class="reserve-close" type="button" aria-label="Close reservation form" data-reserve-close>&#xD7;</button>
+      <span class="eyebrow"><i></i> First release / 2026</span>
+      <h2 id="reserve-title">Your next<br><em>signal</em> starts here.</h2>
+      <p class="reserve-intro">Join the PULSE reservation list for first access to the X1 release and product updates that matter.</p>
+      <form class="reserve-form" id="reserve-form">
+        <label>Full name<input name="name" type="text" autocomplete="name" placeholder="Your name" required></label>
+        <label>Email address<input name="email" type="email" autocomplete="email" placeholder="you@example.com" required></label>
+        <button class="pill-action reserve-submit" type="submit">Reserve my PULSE <span>&#x2197;</span></button>
+        <p class="reserve-note">One thoughtful update at a time. Unsubscribe whenever you want.</p>
+      </form>
+      <div class="reserve-success" id="reserve-success" hidden>
+        <span class="reserve-check">&#x2713;</span>
+        <h3>You&#x2019;re on the list.</h3>
+        <p>We&#x2019;ll be in touch when the first release is ready.</p>
+        <button class="text-link reserve-done" type="button" data-reserve-close>Back to PULSE <span>&#x2192;</span></button>
+      </div>
+    </section>
+  </div>
   <div class="toast" role="status" aria-live="polite">You&#x2019;re on the first-release list. We&#x2019;ll be in touch.</div>
 </body>
 </html>

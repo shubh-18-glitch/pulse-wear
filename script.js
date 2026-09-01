@@ -1,8 +1,11 @@
 const nav = document.getElementById("nav");
 const menuButton = document.querySelector(".menu-btn");
 const navLinks = document.querySelectorAll(".nav-links a");
-const toast = document.querySelector(".toast");
-let toastTimer;
+const reserveModal = document.getElementById("reserve-modal");
+const reserveDialog = reserveModal.querySelector(".reserve-dialog");
+const reserveForm = document.getElementById("reserve-form");
+const reserveSuccess = document.getElementById("reserve-success");
+let reservationTrigger;
 
 function setMenu(open) {
   nav.classList.toggle("open", open);
@@ -21,12 +24,38 @@ document.addEventListener("keydown", (event) => {
   if (event.key === "Escape") setMenu(false);
 });
 
+function openReservation(trigger) {
+  reservationTrigger = trigger;
+  reserveForm.hidden = false;
+  reserveSuccess.hidden = true;
+  reserveModal.hidden = false;
+  document.body.classList.add("reserve-open");
+  window.setTimeout(() => reserveDialog.focus(), 0);
+}
+
+function closeReservation() {
+  reserveModal.hidden = true;
+  document.body.classList.remove("reserve-open");
+  if (reservationTrigger) reservationTrigger.focus();
+}
+
 document.querySelectorAll(".buy").forEach((button) => {
-  button.addEventListener("click", () => {
-    window.clearTimeout(toastTimer);
-    toast.classList.add("show");
-    toastTimer = window.setTimeout(() => toast.classList.remove("show"), 3800);
-  });
+  button.addEventListener("click", () => openReservation(button));
+});
+
+reserveModal.querySelectorAll("[data-reserve-close]").forEach((button) => {
+  button.addEventListener("click", closeReservation);
+});
+
+reserveForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  reserveForm.hidden = true;
+  reserveSuccess.hidden = false;
+  reserveSuccess.querySelector(".reserve-done").focus();
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && !reserveModal.hidden) closeReservation();
 });
 
 const detailTabs = Array.from(document.querySelectorAll(".detail-tab"));

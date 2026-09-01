@@ -85,3 +85,32 @@
     transition-duration: 0.01ms !important;
   }
 }
+
+/* First-release reservation form. */
+body.reserve-open { overflow: hidden; }
+.reserve-modal { position: fixed; z-index: 70; inset: 0; display: grid; place-items: center; padding: 24px; }
+.reserve-modal[hidden] { display: none; }
+.reserve-backdrop { position: absolute; inset: 0; background: rgba(9, 11, 8, .78); backdrop-filter: blur(10px); }
+.reserve-dialog { position: relative; z-index: 1; width: min(100%, 560px); padding: 42px; border: 1px solid rgba(215, 255, 79, .32); border-radius: 28px; background: #171a15; color: var(--paper); box-shadow: 0 28px 80px rgba(0, 0, 0, .48); }
+.reserve-dialog .eyebrow { color: var(--lime); }
+.reserve-dialog .eyebrow i { box-shadow: 0 0 0 4px rgba(215, 255, 79, .12); }
+.reserve-dialog h2 { margin: 24px 0 16px; font-size: clamp(44px, 7vw, 68px); font-weight: 600; letter-spacing: -.09em; line-height: .88; }
+.reserve-dialog h2 em { color: var(--lime); font-style: normal; }
+.reserve-intro { max-width: 390px; margin: 0 0 30px; color: #c0c5b8; font-size: 15px; line-height: 1.48; }
+.reserve-close { position: absolute; top: 17px; right: 17px; display: grid; place-items: center; width: 38px; height: 38px; padding: 0; border: 1px solid rgba(243, 241, 234, .23); border-radius: 50%; background: transparent; color: var(--paper); cursor: pointer; font-size: 27px; line-height: 1; transition: .2s; }
+.reserve-close:hover { background: var(--lime); border-color: var(--lime); color: var(--ink); }
+.reserve-form { display: grid; gap: 16px; }
+.reserve-form label { display: grid; gap: 8px; color: #c9cdc1; font: 500 10px/1 var(--mono); letter-spacing: .1em; text-transform: uppercase; }
+.reserve-form input { width: 100%; min-height: 54px; padding: 0 16px; border: 1px solid rgba(243, 241, 234, .22); border-radius: 10px; outline: none; background: rgba(243, 241, 234, .06); color: var(--paper); font: 500 16px/1 var(--sans); transition: border-color .2s, background .2s; }
+.reserve-form input::placeholder { color: #878d83; }
+.reserve-form input:focus { border-color: var(--lime); background: rgba(215, 255, 79, .07); }
+.reserve-submit { justify-content: center; min-height: 54px; margin-top: 6px; background: var(--lime); color: var(--ink); }
+.reserve-submit:hover { background: #ecff91; }
+.reserve-note { margin: 1px 0 0; color: #9fa59a; font-size: 11px; line-height: 1.4; text-align: center; }
+.reserve-success { padding: 10px 0 4px; }
+.reserve-check { display: grid; place-items: center; width: 48px; height: 48px; margin-bottom: 20px; border-radius: 50%; background: var(--lime); color: var(--ink); font-size: 24px; font-weight: 700; }
+.reserve-success h3 { margin: 0 0 9px; font-size: 32px; letter-spacing: -.07em; }
+.reserve-success p { max-width: 290px; margin: 0 0 28px; color: #c0c5b8; font-size: 15px; line-height: 1.45; }
+.reserve-done { border: 0; padding: 0; background: transparent; color: var(--lime); cursor: pointer; }
+.reserve-done span { border-color: rgba(215, 255, 79, .5); }
+@media (max-width: 560px) { .reserve-modal { align-items: end; padding: 12px; } .reserve-dialog { padding: 34px 24px 26px; border-radius: 22px; } .reserve-dialog h2 { font-size: 48px; } }
