@@ -120,3 +120,8 @@ body.reserve-open { overflow: hidden; }
   .hero-copy { width: min(620px, calc(100% - 64px)); max-width: none; margin-left: clamp(32px, 6vw, 128px); margin-right: 0; }
   .hero-copy h1 { max-width: 620px; }
 }
+
+/* Scalable PULSE wordmark. */
+.brand-logo { display: block; width: 132px; height: auto; }
+.footer-top .brand-logo { width: 168px; }
+@media (max-width: 800px) { .brand-logo { width: 116px; } .footer-top .brand-logo { width: 150px; } }
