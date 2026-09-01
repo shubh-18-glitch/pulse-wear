@@ -114,3 +114,9 @@ body.reserve-open { overflow: hidden; }
 .reserve-done { border: 0; padding: 0; background: transparent; color: var(--lime); cursor: pointer; }
 .reserve-done span { border-color: rgba(215, 255, 79, .5); }
 @media (max-width: 560px) { .reserve-modal { align-items: end; padding: 12px; } .reserve-dialog { padding: 34px 24px 26px; border-radius: 22px; } .reserve-dialog h2 { font-size: 48px; } }
+
+/* Desktop: leave the band unobstructed in the centre-right of the hero. */
+@media (min-width: 801px) {
+  .hero-copy { width: min(620px, calc(100% - 64px)); max-width: none; margin-left: clamp(32px, 6vw, 128px); margin-right: 0; }
+  .hero-copy h1 { max-width: 620px; }
+}
